@@ -18,16 +18,20 @@ for (i in 1:n) {
 		+beta[26]*x[i,25]+beta[27]*x[i,26]
 		+beta[28]*x[i,27]+beta[29]*x[i,28]
 		+beta[30]*x[i,29]+beta[31]*x[i,30]
-		+beta[32]*x[i,31]+beta[33]*x[i,32]
-		+beta[34]*x[i,33]+beta[35]*x[i,34]
-		+beta[36]*x[i,35]+beta[37]*x[i,36]
-		+beta[38]*x[i,37]+beta[39]*x[i,38]
-		+beta[40]*x[i,39]+beta[41]*x[i,40]
-		+beta[42]*x[i,41]
+		+beta[32]*x[i,31]
+		#+beta[33]*x[i,32]
+		#+beta[34]*x[i,33]
+		#+beta[35]*x[i,34]
+		#+beta[36]*x[i,35]+beta[37]*x[i,36]
+		#+beta[38]*x[i,37]
+		#+beta[39]*x[i,38]
+		#+beta[40]*x[i,39]
+		#+beta[41]*x[i,40]
+		#+beta[42]*x[i,41]
 		
 	}
 #Priors 
-for (j in 1:42) { beta[j] ~ dnorm(0,0.001) }
+for (j in 1:32) { beta[j] ~ dnorm(0,0.001) }
 #for (j in 1:3) { beta[j] ~ ddexp(0,0.001) }
 #for (j in 1:3) { beta[j] ~ dt(0,0.001,2) }
 tau ~ dgamma(0.001,0.001)
